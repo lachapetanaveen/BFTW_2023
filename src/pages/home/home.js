@@ -31,7 +31,7 @@ const getdata = async() => {
                 <Card sx={{maxWidth:345}}>
       <CardMedia
         sx={{ widows:50,height: 150 }}
-      image={require('../../assets/istockphoto-1412543316-1024x1024.jpg')}
+      image={require('../../assets/joy.jpg')}
         title="green iguana"
       />
       <CardContent>

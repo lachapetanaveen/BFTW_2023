@@ -9,13 +9,14 @@ import AfterRegister from '../pages/no_greater_love/afterregister';
 import QuestionsStepper from '../pages/no_greater_love/questions.stepper';
 import StepperAnimation from '../pages/no_greater_love/stepperanimation';
 
-
+import NgHome from '../no_greater_love/pages/home/home'
 const PublicRoutes = () => {
     return ( 
         <>
        <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/home' element={<Home/>} />
+        <Route path='/' element={<NgHome/>} />
+        {/* <Route path='/home' element={<Home/>} /> */}
+        <Route path='/home' element={<NgHome/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<ContactUs/>} />
         <Route path='/register' element={<Register/>} />

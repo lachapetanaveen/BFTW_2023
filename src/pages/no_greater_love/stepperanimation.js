@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Backdrop from "@mui/material/Backdrop";
 import Fade from "@mui/material/Fade";
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition,TransitionGroup } from 'react-transition-group';
 
 
 const StepperAnimation = () => {
@@ -107,6 +107,7 @@ const StepperAnimation = () => {
 console.log(stepQuestions,'stepQuestions');
     return (
       <div>
+          <TransitionGroup>
         {stepQuestions.map(question => {
           const {
             id,
@@ -131,6 +132,8 @@ console.log(stepQuestions,'stepQuestions');
                 <CSSTransition
                 in={step === step}
                 timeout={300}
+                key={question.id}
+                
                 classNames="slide-up"
                 unmountOnExit
               >
@@ -210,6 +213,7 @@ console.log(stepQuestions,'stepQuestions');
             )
           }
         })}
+        </TransitionGroup>
       </div>
     );
   };
