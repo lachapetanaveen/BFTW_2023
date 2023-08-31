@@ -22,7 +22,7 @@ const PrivateRoutes = () => {
  
 
 
-const PrivateMiddleware = () => {
+const PrivateMiddleware = () => { 
    
     useEffect(() => {
       const checkAuthentication = async () => {
