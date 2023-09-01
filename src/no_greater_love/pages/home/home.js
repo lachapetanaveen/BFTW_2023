@@ -1,6 +1,8 @@
 import React, { Component,useState } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import the carousel styles
 import { Carousel } from 'react-responsive-carousel';
+import Footer from '../../components/footer';
+import { Link } from 'react-router-dom';
 
 const testimonialsData = [
     {
@@ -46,6 +48,17 @@ const Home = () => {
     setSelectedOption(event.target.value);
     setShowInputField(event.target.value === 'yes');
   };
+const handlecheck = (item) => {
+  setSelectedOption(item)
+  if(item === 'I have accepted Jesus as my Lord and Savior'){
+    window.open('/ihaveacceptedjesus','_blank')
+  }else if(item === 'I want to accept Jesus as my Lord and Savior'){
+    window.open('/iwanttoacceptjesus','_blank')
+  }else if(item === 'I want to learn more about Jesus'){
+    window.open('/iwanttolearnaboutjesus','_blank')
+  }
+
+}
     return (
         <>
             <div>
@@ -74,11 +87,12 @@ const Home = () => {
            
             <button style={{marginBottom:'20px'}}><input
                              type='checkbox'
+                             checked={selectedOption === 'I have accepted Jesus as my Lord and Savior'}
                              value='I have accepted Jesus as my Lord and Savior'
-                            
+                            onChange={() => handlecheck('I have accepted Jesus as my Lord and Savior')}
                              style={{marginRight:'12px'}}
                          
-                           /><a href="page1.html" target="_blank">I have accepted Jesus as my Lord and Savior</a></button>
+                           /><Link to={'/ihaveacceptedjesus'} target="_blank">I have accepted Jesus as my Lord and Savior</Link></button>
        
           </div>
           <div className='col-md-4'>
@@ -86,10 +100,10 @@ const Home = () => {
            <button style={{marginBottom:'20px'}}><input
                              type='checkbox'
                              value='I want to accept Jesus as my Lord and Savior'
-                            
+                             onChange={() => handlecheck('I want to accept Jesus as my Lord and Savior')}
                              style={{marginRight:'12px'}}
-                         
-                           /><a href="page1.html" target="_blank">I want to accept Jesus as my Lord and Savior</a></button>
+                             checked={selectedOption === 'I want to accept Jesus as my Lord and Savior'}
+                           /><Link to={'/iwanttoacceptjesus'}  target="_blank">I want to accept Jesus as my Lord and Savior</Link></button>
       
         </div>
         <div className='col-md-4'>
@@ -97,10 +111,10 @@ const Home = () => {
         <button style={{marginBottom:'20px'}}><input
                              type='checkbox'
                              value='I want to learn more about Jesus'
-                            
+                             onChange={() => handlecheck('I want to learn more about Jesus')}
                              style={{marginRight:'12px'}}
                          
-                           /><a href="page3.html" target="_blank">I want to learn more about Jesus</a></button>
+                           /><Link to={'/iwanttolearnaboutjesus'}  target="_blank">I want to learn more about Jesus</Link></button>
         </div>
          
           
@@ -172,7 +186,7 @@ const Home = () => {
       {testimonialsData.map((testimonial) => (
         <div key={testimonial.id}>
           <p>{testimonial.quote}</p>
-          <p >{testimonial.reference}</p>
+          <p>{testimonial.reference}</p>
         </div>
       ))}
     </Carousel>
@@ -186,13 +200,7 @@ const Home = () => {
     </div> */}
   </section>
             </div>
-            <footer class="universal-footer">
-    <div class="footer-buttons">
-      <button id="downloadButton">Digital Download</button>
-      <button id="physicalCopyButton">Physical Copy</button>
-      <button id="emailButton">7 Day Email</button>
-    </div>
-  </footer>
+           <Footer />
         </>
     );
 }

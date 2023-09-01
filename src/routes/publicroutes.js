@@ -10,6 +10,12 @@ import QuestionsStepper from '../pages/no_greater_love/questions.stepper';
 import StepperAnimation from '../pages/no_greater_love/stepperanimation';
 
 import NgHome from '../no_greater_love/pages/home/home'
+import DownloadForm from '../no_greater_love/pages/additionalpages/gospelofjohndownload';
+import BookletForm from '../no_greater_love/pages/additionalpages/gospelofjohnbooklet';
+import EmailSignup from '../no_greater_love/pages/additionalpages/jesusiamemailsignup';
+import IHaveAcceptedJesus from '../no_greater_love/pages/additionalpages/ihaveacceptedjesus';
+import IWanttoAcceptJesus from '../no_greater_love/pages/additionalpages/iwanttoacceptjesus';
+import IWantToLearnAboutJesus from '../no_greater_love/pages/additionalpages/iwanttolearnaboutjesus';
 const PublicRoutes = () => {
     return ( 
         <>
@@ -23,6 +29,12 @@ const PublicRoutes = () => {
         <Route path='/afterregister' element={<AfterRegister/>} />
         <Route path='/questionstepper' element={<QuestionsStepper/>} />
         <Route path='/stepperanimation' element={<StepperAnimation/>} />
+        <Route path='/gospelofjohndownload' element={<DownloadForm/>} />
+        <Route path='/gospelofjohnbooklet' element={<BookletForm/>} />
+        <Route path='/jesusiamemailsignup' element={<EmailSignup/>} />
+        <Route path='/ihaveacceptedjesus' element={<IHaveAcceptedJesus/>} />
+        <Route path='/iwanttoacceptjesus' element={<IWanttoAcceptJesus/>} />
+        <Route path='/iwanttolearnaboutjesus' element={<IWantToLearnAboutJesus/>} />
        </Routes>
        </>
      );
