@@ -3,7 +3,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import the ca
 import { Carousel } from 'react-responsive-carousel';
 import Footer from '../../components/footer';
 import { Link } from 'react-router-dom';
-
+import Header from '../../components/header';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 const testimonialsData = [
     {
       id: 1,
@@ -62,19 +63,64 @@ const handlecheck = (item) => {
     return (
         <>
             <div>
-                <header>
+                {/* <header>
                     <h2>No Greater Love</h2>
-                </header>
-                <section id="intro" class="content-section">
-                <div className='container-fluid content'>
+                </header> */}
+                {/* <Header /> */}
+                <div>
+          <nav className='nglvheader'>
+            <div className="nglvnavbar-container">
+              <div className="logo">
+                <img className="logo_img" src={require('../../../assets/NGLV_images/No Greater Love Logo Small Transparent.png')} alt="logo" />
+              </div>
+                <ul className="nav-links">
+                  {/* <li><Link style={{ color: 'white' }} to={'/home'}>Home</Link></li>
+                  <li><Link style={{ color: 'white' }} to={'/about'}>The Gospel of John </Link></li>
+                  <li><Link style={{ color: 'white' }} to={'/contact'}>Free Tools </Link></li> */}
+                   <li>
+                   <ScrollLink
+                style={{ color: 'white', cursor: 'pointer' }}
+                to="home"
+                smooth={true}
+                duration={500}
+              >
+                Home
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                style={{ color: 'white', cursor: 'pointer' }}
+                to="gospel of john"
+                smooth={true}
+                duration={500}
+              >
+                The Gospel of John
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                style={{ color: 'white', cursor: 'pointer' }}
+                to="free tools"
+                smooth={true}
+                duration={500}
+              >
+                Free Tools
+              </ScrollLink>
+            </li>
+                </ul>
+            </div>
+          </nav>
+        </div>
+                <section  id="intro" class="content-section">
+                <div style={{marginTop:'120px'}} id="home" className='container-fluid content'>
             
-        <div className='row'>
+        <div  className='row'>
             <div className='col-md-6 d-flex align-items-center'>
             <p style={{lineHeight:2}}>No Greater Love is a promise recorded in the Bible. Jesus said "Greater love has no one than this: to lay down one's life for one's friends" (John 15:13). What is amazing is that he said it, then he did it, and then he rose from the grave three days later to prove it! 
 </p>
             </div>
             <div  className='col-md-6 d-flex justify-content-end'>
-                <img style={{maxHeight:'200px'}}  src={require('../../../assets/joy.jpg')} />
+                <img style={{maxHeight:'200px'}}  src={require('../../../assets/NGLV_images/No Greater Love Logo Small Transparent.png')} />
             </div>
         </div>
         <div style={{marginTop:'40px',marginBottom:'28px'}}>
@@ -91,7 +137,6 @@ const handlecheck = (item) => {
                              value='I have accepted Jesus as my Lord and Savior'
                             onChange={() => handlecheck('I have accepted Jesus as my Lord and Savior')}
                              style={{marginRight:'12px'}}
-                         
                            /><Link to={'/ihaveacceptedjesus'} target="_blank">I have accepted Jesus as my Lord and Savior</Link></button>
        
           </div>
@@ -121,14 +166,14 @@ const handlecheck = (item) => {
           
         </div>
       
-            <div style={{marginTop:'40px',paddingTop:'40px'}}>
+            <div id="gospel of john" style={{marginTop:'40px',paddingTop:'40px'}}>
             <div  className='row'>
             <div className='col-md-6 d-flex align-items-center'>
             <p style={{lineHeight:2}}>The Gospel of John is an account of the words and deeds of Jesus Christ recorded by His friend, John. It may be the most important thing ever written, and you owe it to yourself to read it. 
 </p>
             </div>
             <div  className='col-md-6 d-flex justify-content-end'>
-                <img style={{maxHeight:'200px'}}  src={require('../../../assets/photo.jpeg')} />
+                <img style={{maxHeight:'200px'}}  src={require('../../../assets/NGLV_images/No Greater Love Front.jpg')} />
             </div>
         </div>
 </div>
@@ -200,7 +245,10 @@ const handlecheck = (item) => {
     </div> */}
   </section>
             </div>
-           <Footer />
+            <div id="free tools">
+            <Footer />
+            </div>
+           
         </>
     );
 }
