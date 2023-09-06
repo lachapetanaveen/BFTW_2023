@@ -16,6 +16,8 @@ import EmailSignup from '../no_greater_love/pages/additionalpages/jesusiamemails
 import IHaveAcceptedJesus from '../no_greater_love/pages/additionalpages/ihaveacceptedjesus';
 import IWanttoAcceptJesus from '../no_greater_love/pages/additionalpages/iwanttoacceptjesus';
 import IWantToLearnAboutJesus from '../no_greater_love/pages/additionalpages/iwanttolearnaboutjesus';
+import LocalChurches from '../no_greater_love/pages/additionalpages/localchurches';
+import ChristianResources from '../no_greater_love/pages/additionalpages/christianresources';
 const PublicRoutes = () => {
     return ( 
         <>
@@ -35,6 +37,8 @@ const PublicRoutes = () => {
         <Route path='/ihaveacceptedjesus' element={<IHaveAcceptedJesus/>} />
         <Route path='/iwanttoacceptjesus' element={<IWanttoAcceptJesus/>} />
         <Route path='/iwanttolearnaboutjesus' element={<IWantToLearnAboutJesus/>} />
+        <Route path='/localchurches' element={<LocalChurches/>} />
+        <Route path='/ChristianResources' element={<ChristianResources/>} />
        </Routes>
        </>
      );
