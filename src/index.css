@@ -362,6 +362,12 @@ background-color: white;
 padding:6px;
 border-radius: 100px;
 }
+.nglvheader .logo_img {
+  background-color: transparent !important;
+  width:46%;
+  /* height:100px */
+
+}
 .btn-white {
   margin-left: 40px !important;
   background-color: white;
@@ -501,6 +507,30 @@ header {
   color: black;
   text-align: center;
   padding: 8px 0;
+}
+.nglvheader {
+  /* background-color: #e3eeda;
+  color: black;
+  text-align: center;
+  padding: 8px 0; */
+}
+.nglvnavbar-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e3eeda;
+  /* padding: 10px; */
+  padding-right: 40px;
+  color: white;
+  position: fixed;
+  z-index: 99999;
+}
+.nglvheader .nav-links li a {
+  color:black !important;
+  text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
 }
 .content-section {
   padding: 40px 20px;
