@@ -23,8 +23,10 @@ const IWantToLearnAboutJesus = () => {
                 </header>
                 <section id="intro" class="content-section">
                 <div className='container-fluid content'>
+                    <p>We are so glad you want to learn more about Jesus. Here are three questions to ask about Jesus (This should replace your form. We are not asking them to answer the questions on the website but in their heart and mind.)</p>
                 <div class="content-container">
                     <p>*Three Questions to Ask about Jesus</p>
+                    <div className="dynform-container">
                     <div className='dynform'>
         
             <div>
@@ -59,14 +61,20 @@ const IWantToLearnAboutJesus = () => {
             
             <input onClick={() => submitdata()} type="submit" value="Submit" />
             </div>
+            </div>
                 </div>
                 <div style={{marginTop:'20px'}}>
                     <p>Read Gospel of John</p>
                     <Link to={'/jesusiamemailsignup'} target="_blank" style={{textDecoration:'underline'}}>Learn more about what Jesus says about himself (Sign up for "I Am" email)</Link><br />
                     <Link to={'/gospelofjohnbooklet'} target="_blank" style={{textDecoration:'underline'}}>Click to download Gospel of John with Name only (no email)</Link>
                 </div>
+                <div style={{marginTop:'24px'}}>
+                <p>We invite you to learn more about Jesus by</p>
+                <p>1.Reading The Gospel of John. Click below to get your free copy.</p>
+                <p>2.Learn more about what Jesus says about himself by signing up to receive a daily email explaining Jesus “I Am” statements recorded in the Bible.</p>
+               </div>
                 </div>
-               
+              
                 </section>
                 </div>
         </>
