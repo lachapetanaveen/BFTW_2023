@@ -9,41 +9,49 @@ const testimonialsData = [
     {
       id: 1,
       quote: "I am the bread of life",
+      img:require('../../../assets/NGLV_images/Nairobi City Reflecting Lake.jpg'),
       reference: "John 6:36",
     },
     {
       id: 2,
       quote: "I am the light of the world",
+      img:require('../../../assets/NGLV_images/Nairobi Skyline Panorama.jpg'),
       reference: "John 8:12",
     },
     {
         id: 3,
         quote: "I am the gate for the sheep",
+        img:require('../../../assets/NGLV_images/Nairobi City Reflecting Lake.jpg'),
         reference: "John 10:7",
       },
       {
         id: 4,
         quote: "I am the good shepherd",
+        img:require('../../../assets/NGLV_images/Nairobi Skyline with Clouds.jpg'),
         reference: "John 10:11",
       },{
         id: 5,
         quote: "I am the resurrection and the life",
+        img:require('../../../assets/NGLV_images/Nairobi Sunlight.jpg'),
         reference: "John 11:25",
       },
       {
         id: 6,
         quote: "I am the way and the truth and the life",
+        img:require('../../../assets/NGLV_images/Nairobi City Park.jpg'),
         reference: "John 14:6",
       },{
         id: 7,
         quote: "I am the true vine",
+        img:require('../../../assets/NGLV_images/Nairobi Skyline with Clouds.jpg'),
         reference: "John 15:1",
       }
   ];
 const Home = () => {
     const [selectedOption, setSelectedOption] = useState('');
   const [showInputField, setShowInputField] = useState(false);
-  const [comment,setComment] = useState('')
+  const [comment,setComment] = useState('');
+  const [homelink,setHomeLink] = useState(false)
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -60,6 +68,7 @@ const handlecheck = (item) => {
   }
 
 }
+console.log(homelink,'homelink');
     return (
         <>
             <div>
@@ -77,14 +86,14 @@ const handlecheck = (item) => {
                   {/* <li><Link style={{ color: 'white' }} to={'/home'}>Home</Link></li>
                   <li><Link style={{ color: 'white' }} to={'/about'}>The Gospel of John </Link></li>
                   <li><Link style={{ color: 'white' }} to={'/contact'}>Free Tools </Link></li> */}
-                   <li>
+                   <li >
                    <ScrollLink
                 style={{ color: 'white', cursor: 'pointer' }}
                 to="home"
                 smooth={true}
                 duration={500}
               >
-                Home
+                <span onClick={() => setHomeLink(true)}>Home</span>
               </ScrollLink>
             </li>
             <li>
@@ -111,8 +120,8 @@ const handlecheck = (item) => {
             </div>
           </nav>
         </div>
-                <section  id="intro" class="content-section">
-                <div style={{marginTop:'120px'}} id="home" className='container-fluid content'>
+                <section  id="intro" class="content-section section-to-scroll">
+                <div style={{ paddingTop: homelink ? '120px':'2px' }} id="home" className='container-fluid content'>
             
         <div  className='row'>
             <div className='col-md-6 d-flex align-items-center'>
@@ -125,19 +134,22 @@ const handlecheck = (item) => {
         </div>
         <div style={{marginTop:'40px',marginBottom:'28px'}}>
         <h2>What do you believe about Jesus?</h2>
-        <p>(select one)(When selected, opens a new tab/page based on selection)</p>
         </div>
        
-        <div style={{marginTop:'40px'}} className='row'>
+          <div style={{marginTop:'40px'}} className='row'>
             <div className='col-md-4'>
            
-            <button style={{marginBottom:'20px'}}><input
+            <button style={{marginBottom:'20px'}}>
+                          <input
                              type='checkbox'
                              checked={selectedOption === 'I have accepted Jesus as my Lord and Savior'}
                              value='I have accepted Jesus as my Lord and Savior'
                             onChange={() => handlecheck('I have accepted Jesus as my Lord and Savior')}
                              style={{marginRight:'12px'}}
-                           /><Link to={'/ihaveacceptedjesus'} target="_blank">I have accepted Jesus as my Lord and Savior</Link></button>
+                           />
+                           <Link to={'/ihaveacceptedjesus'} target="_blank">I have accepted Jesus as my Lord and Savior</Link>
+                           
+            </button>
        
           </div>
           <div className='col-md-4'>
@@ -166,21 +178,19 @@ const handlecheck = (item) => {
           
         </div>
       
-            <div id="gospel of john" style={{marginTop:'40px',paddingTop:'40px'}}>
+            <div id="gospel of john" style={{paddingTop: '120px',paddingTop:'40px'}}>
             <div  className='row'>
             <div className='col-md-6 d-flex align-items-center'>
             <p style={{lineHeight:2}}>The Gospel of John is an account of the words and deeds of Jesus Christ recorded by His friend, John. It may be the most important thing ever written, and you owe it to yourself to read it. 
 </p>
             </div>
             <div  className='col-md-6 d-flex justify-content-end'>
-                <img style={{maxHeight:'200px'}}  src={require('../../../assets/NGLV_images/No Greater Love Front.jpg')} />
+                <img style={{maxHeight:'400px',width:'60%'}}  src={require('../../../assets/NGLV_images/No Greater Love Front.jpg')} />
             </div>
         </div>
 </div>
-<div style={{marginTop:'40px',marginBottom:'28px'}}>
-<h2>Survey</h2>
-</div>
-<div style={{ alignItems: 'center' }}>
+
+<div style={{marginTop:'40px',marginBottom:'28px',alignItems:'center'}}>
   <div style={{ border: '1px solid grey', padding: '8px', borderRadius: '10px' }}>
     <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
       <div>
@@ -224,12 +234,19 @@ const handlecheck = (item) => {
                      />
         </div> : null
     }
+    {selectedOption === 'no' ? 
+        <div>
+          <p style={{textDecoration:'underline',cursor:'pointer'}}>If you want one, click below to request one</p>
+        </div>
+           : null
+    }
 <div style={{marginTop:'28px'}} className="testimonials-section">
       <h2 style={{ textAlign: 'left', display: 'block', marginTop: '10px' }}>Iam Statements</h2>
       <div style={{paddingTop:'40px'}} className="testimonial-list">
-      <Carousel infiniteLoop={true} autoPlay={true} showStatus={false} showIndicators={false} showThumbs={false}>
+      <Carousel swipeable={true}  interval={8000} infiniteLoop={true} autoPlay={true} showStatus={false} showIndicators={false} showThumbs={false}>
       {testimonialsData.map((testimonial) => (
         <div key={testimonial.id}>
+          <img style={{width:'60%'}} src={testimonial.img}  />
           <p>{testimonial.quote}</p>
           <p>{testimonial.reference}</p>
         </div>

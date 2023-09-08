@@ -15,9 +15,20 @@ const Footer = () => {
     return ( 
         <footer class="universal-footer">
         <div class="footer-buttons">
-          <button onClick={() => senddownload()} id="downloadButton">Digital Download</button>
-          <button onClick={() => sendbooklet()} id="physicalCopyButton">Physical Copy</button>
-          <button onClick={() => sendemailsignup()} id="emailButton">7 Day Email</button>
+          <div className='row'>
+            <div className='col-md-4'>
+            <button onClick={() => senddownload()} id="downloadButton"><img src={require('../../assets/NGLV_images/PDF Download.jpg')} /></button>
+            </div>
+            <div className='col-md-4'>
+            <button onClick={() => sendbooklet()} id="physicalCopyButton"><img src={require('../../assets/NGLV_images/Booklet Order.jpg')} /></button>
+            </div>
+            <div className='col-md-4'>
+            <button onClick={() => sendemailsignup()} id="emailButton"><img src={require('../../assets/NGLV_images/Email Signup.jpg')} /></button>
+            </div>
+          </div>
+          
+          
+         
         </div>
       </footer>
      );

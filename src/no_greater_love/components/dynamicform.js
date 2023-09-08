@@ -28,7 +28,9 @@ const DynamicForm = ({fields,handlesubmit}) => {
       };
     return ( 
         <>
-        <div className='dynform'>
+        <div className="dynform-container">
+        <div  className='dynform'>
+          <div >
          {fields.map((field) => {
                     return(
             <div>
@@ -40,7 +42,7 @@ const DynamicForm = ({fields,handlesubmit}) => {
     <input type="text"
                              value={formData[field.name]}
                             placeholder={`Enter ${field.label}`}
-                           
+                          //  style={{width:'100%'}}
                               />
                               </div>
                 
@@ -48,6 +50,7 @@ const DynamicForm = ({fields,handlesubmit}) => {
             
              )
             })}
+            </div>
             <input onClick={() => handleSubmit()} type="submit" value="Submit" />
     {/* <label style={{ textAlign: 'left', display: 'block', marginTop: '10px' }} for="fname">First Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your name.." />
@@ -64,6 +67,8 @@ const DynamicForm = ({fields,handlesubmit}) => {
 
  
 </div>
+        </div>
+        
        
             
         </>
