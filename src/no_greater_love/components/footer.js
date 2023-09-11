@@ -1,29 +1,34 @@
 import React, { Component } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Footer = () => {
+  let navigate = useNavigate()
     const senddownload = () => {
-        window.open('/gospelofjohndownload','_blank')
+      navigate('/gospelofjohndownload')
+        // window.open('/gospelofjohndownload','_blank')
       }
       const sendbooklet = () => {
-        window.open('/gospelofjohnbooklet','_blank')
+        navigate('/gospelofjohnbooklet')
+        // window.open('/gospelofjohnbooklet','_blank')
       }
       const sendemailsignup = () => {
-        window.open('/jesusiamemailsignup','_blank')
+        navigate('/jesusiamemailsignup')
+        // window.open('/jesusiamemailsignup','_blank')
       }
     return ( 
         <footer class="universal-footer">
         <div class="footer-buttons">
           <div className='row'>
             <div className='col-md-4'>
-            <button onClick={() => senddownload()} id="downloadButton"><img src={require('../../assets/NGLV_images/PDF Download.jpg')} /></button>
+            <button onClick={() => senddownload()} id="downloadButton"><img style={{width:'400px',height:'260px'}} src={require('../../assets/NGLV_images/PDF Download.jpg')} /></button>
             </div>
             <div className='col-md-4'>
-            <button onClick={() => sendbooklet()} id="physicalCopyButton"><img src={require('../../assets/NGLV_images/Booklet Order.jpg')} /></button>
+            <button onClick={() => sendbooklet()} id="physicalCopyButton"><img style={{width:'400px',height:'260px'}} src={require('../../assets/NGLV_images/Booklet Order.jpg')} /></button>
             </div>
             <div className='col-md-4'>
-            <button onClick={() => sendemailsignup()} id="emailButton"><img src={require('../../assets/NGLV_images/Email Signup.jpg')} /></button>
+            <button onClick={() => sendemailsignup()} id="emailButton"><img style={{width:'400px',height:'260px'}} src={require('../../assets/NGLV_images/Email Signup.jpg')} /></button>
             </div>
           </div>
           

@@ -25,6 +25,9 @@ const PublicRoutes = () => {
         <Route path='/' element={<NgHome/>} />
         {/* <Route path='/home' element={<Home/>} /> */}
         <Route path='/home' element={<NgHome/>} />
+        <Route path='/' element={<NgHome />} />
+        <Route path='/thegospeljohn' element={<NgHome />} />
+        <Route path='/freetools' element={<NgHome />} />
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<ContactUs/>} />
         <Route path='/register' element={<Register/>} />
