@@ -21,14 +21,14 @@ const Footer = () => {
         <footer class="universal-footer">
         <div class="footer-buttons">
           <div className='row'>
-            <div className='col-md-4'>
-            <button onClick={() => senddownload()} id="downloadButton"><img style={{width:'400px',height:'260px'}} src={require('../../assets/NGLV_images/PDF Download.jpg')} /></button>
+            <div className='col-md-4 d-flex aligin-items-left'>
+            <button onClick={() => senddownload()} id="downloadButton"><img style={{width:'200px',height:'120px'}} src={require('../../assets/NGLV_images/PDF Download.jpg')} /></button>
             </div>
             <div className='col-md-4'>
-            <button onClick={() => sendbooklet()} id="physicalCopyButton"><img style={{width:'400px',height:'260px'}} src={require('../../assets/NGLV_images/Booklet Order.jpg')} /></button>
+            <button onClick={() => sendbooklet()} id="physicalCopyButton"><img style={{width:'200px',height:'120px'}} src={require('../../assets/NGLV_images/Booklet Order.jpg')} /></button>
             </div>
             <div className='col-md-4'>
-            <button onClick={() => sendemailsignup()} id="emailButton"><img style={{width:'400px',height:'260px'}} src={require('../../assets/NGLV_images/Email Signup.jpg')} /></button>
+            <button onClick={() => sendemailsignup()} id="emailButton"><img style={{width:'200px',height:'120px'}} src={require('../../assets/NGLV_images/Email Signup.jpg')} /></button>
             </div>
           </div>
           
