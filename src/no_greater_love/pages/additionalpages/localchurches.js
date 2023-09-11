@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import NGLVHeader from '../../components/header';
 
 const LocalChurches = () => {
     return ( 
         <div>
-            <header>
+          <NGLVHeader />
+            {/* <header>
                     <h2>Local Churches</h2>
-                </header>
+                </header> */}
                 <section id="intro" class="content-section">
                 <div className='container-fluid content'>
                 <div className="table-box table-responsive">

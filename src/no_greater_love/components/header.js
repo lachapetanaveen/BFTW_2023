@@ -1,40 +1,114 @@
-import React, { Component } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import React, { Component,useState,useEffect } from 'react';
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
-
-const Header = () => {
+const links = [
+  {
+    "to" : 'home',
+    "text" : 'Home',
+    "link" : '/home'
+  },
+  {
+    "to" : 'gospel of john',
+    "text" : 'The Gospel of John',
+    "link" : '/thegospeljohn'
+  },
+  {
+    "to" : 'free tools',
+    "text" : 'Free Tools',
+    "link" : '/freetools'
+  }
+]
+const NGLVHeader = (props) => {
+  let location = useLocation()
+  const [homelink,setHomeLink] = useState(false)
+  const clickhome = (item) => {
+    if(item.to === 'home'){
+      props.clearpadd(true)
+    }
+    
+  }
+  const scrollToSection = () => {
+    let path = '';
+    if(location.pathname === '/home'){
+        path = 'home'
+    }else if(location.pathname === '/thegospeljohn'){
+      path = 'gospel of john'
+    }else if(location.pathname === '/freetools'){
+      path = 'free tools'
+    }
+    console.log(path,'pathpath');
+    scroll.scrollTo(path, {
+      duration: 500,
+      smooth: true,
+      offset: -50, // You can adjust the offset if needed
+    });
+  };
+  useEffect(() => {
+   
+      scrollToSection();
+    
+  }, [location.pathname]);
     return ( 
         <>
-            <div>
+              <div>
           <nav className='nglvheader'>
             <div className="nglvnavbar-container">
-              <div className="logo">
-                <img className="logo_img" src={require('../../assets/NGLV_images/No Greater Love Logo Small Transparent.png')} alt="logo" />
-              </div>
-              {/* <div>
-                <li style={{listStyle:'none',textDecorationLine:'underline',cursor:'pointer'}}><Link style={{ color: 'white' }} to={'/register'}>Click Here</Link></li>
+              {/* <div className="logo">
+                <img className="logo_img" src={require('../../../assets/NGLV_images/No Greater Love Logo Small Transparent.png')} alt="logo" />
               </div> */}
-             
+              <div>
+                <img className='nglvlogo'  src={require('../../assets/NGLV_images/No Greater Love Logo Small Transparent.png')} alt="logo" />
+              </div>
                 <ul className="nav-links">
-                  <li><Link style={{ color: 'white' }} to={'/home'}>Home</Link></li>
+                  {/* <li><Link style={{ color: 'white' }} to={'/home'}>Home</Link></li>
                   <li><Link style={{ color: 'white' }} to={'/about'}>The Gospel of John </Link></li>
-                  <li><Link style={{ color: 'white' }} to={'/contact'}>Free Tools </Link></li>
+                  <li><Link style={{ color: 'white' }} to={'/contact'}>Free Tools </Link></li> */}
+                  {links.map((k,index) => {
+                      return(
+                        <li >
+                          {location.pathname === '/home' || location.pathname === '/' || location.pathname === '/thegospeljohn' || location.pathname === '/freetools' ? 
+                            <ScrollLink
+                            style={{ color: 'white', cursor: 'pointer' }}
+                            to={k.to}
+                            smooth={true}
+                            duration={500}
+                          >
+                            <span onClick={() => clickhome(k)}>{k.text}</span>
+                          </ScrollLink> : 
+                          <Link style={{ color: 'white', cursor: 'pointer' }} to={k.link} >{k.text}</Link>
+                          }
+                        
+                 </li>
+                      )
+                  })}
                   
-                  {/* <button onClick={() => handleOpen()} className="btn btn-sm btn-white"> Login
-                  </button>
-                  <button onClick={() => sendregister()} className="btn btn-sm btn-white"> Register
-                  </button> */}
+            {/* <li>
+              <ScrollLink
+                style={{ color: 'white', cursor: 'pointer' }}
+                to="gospel of john"
+                smooth={true}
+                duration={500}
+              >
+                The Gospel of John
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                style={{ color: 'white', cursor: 'pointer' }}
+                to="free tools"
+                smooth={true}
+                duration={500}
+              >
+                Free Tools
+              </ScrollLink>
+            </li> */}
                 </ul>
-            
-
             </div>
           </nav>
-          {/* {isDropdownOpen && ( */}
-
-          {/* )} */}
         </div>
         </>
      );
 }
  
-export default Header;
+export default NGLVHeader;

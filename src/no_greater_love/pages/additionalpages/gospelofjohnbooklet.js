@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DynamicForm from '../../components/dynamicform';
 import Footer from '../../components/footer';
+import NGLVHeader from '../../components/header';
 
 
 const BookletForm = () => {
@@ -32,9 +33,10 @@ const BookletForm = () => {
     return ( 
         <>
         <div>
-            <header>
+          <NGLVHeader />
+            {/* <header>
                 <h2>Booklet Form</h2>
-            </header>
+            </header> */}
             <section id="intro" class="content-section">
             <div className='container-fluid content'>
                <DynamicForm fields={fields} onSubmit={handleSubmit} />

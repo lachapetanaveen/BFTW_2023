@@ -506,13 +506,21 @@ header {
   background-color: #e3eeda;
   color: black;
   text-align: center;
-  padding: 8px 0;
+  /* padding: 8px 0; */
 }
 .nglvheader {
   /* background-color: #e3eeda;
   color: black;
   text-align: center;
   padding: 8px 0; */
+}
+.nglvlogo {
+  width: 120px;
+  margin: -28px auto;
+  position: absolute;
+}
+.nglvheader img {
+  /* margin: 0px auto !important; */
 }
 .nglvnavbar-container {
   width: 100%;
@@ -669,7 +677,7 @@ img {
   margin-bottom: 6px;
 }
 .section-to-scroll {
-  margin-top: 80px; /* Adjust this value as needed */
+  /* margin-top: 80px; Adjust this value as needed */
 }
 .nglvfooter{
   /* background-color: #333; Set your desired background color */
@@ -678,6 +686,9 @@ img {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+.fsize {
+  font-size: 14px !important;
 }
 @media (max-width: 768px) {
   .sidebar.open {

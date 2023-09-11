@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Interests } from '../../../constants/constants'
 import { toast } from 'react-toastify';
 import { uploadresourse } from '../../../services/resourseService';
+import NGLVHeader from '../../components/header';
 
 
 const ChristianResources = () => {
@@ -50,9 +51,10 @@ const ChristianResources = () => {
       }
     return ( 
         <div>
-             <header>
+          <NGLVHeader />
+             {/* <header>
                     <h2>Christian Resources</h2>
-                </header>
+                </header> */}
                 <section id="intro" class="content-section">
                 <div className='container-fluid content'>
             <div className='profile-box' style={{ marginTop: '60px', }}>

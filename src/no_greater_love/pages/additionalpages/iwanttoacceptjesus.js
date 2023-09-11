@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Footer from '../../components/footer';
+import NGLVHeader from '../../components/header';
 
 
 
 const IWanttoAcceptJesus = () => {
     return ( 
         <>
+        <NGLVHeader />
              <div>
                 <header>
                     <h2>HOW TO BECOME A CHILD OF GOD</h2>

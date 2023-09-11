@@ -35,14 +35,14 @@ const DynamicForm = ({fields,handlesubmit}) => {
                     return(
             <div>
                 {field.required ? 
-                    <label style={{ textAlign: 'left', display: 'block'}} >{field.label}<span style={{color:'red'}}>*</span></label> : 
-                    <label style={{ textAlign: 'left', display: 'block'}} >{field.label}  <span style={{color:'red',fontSize:'10px'}}>(Optional)</span></label>
+                    <label style={{ textAlign: 'left', display: 'block',fontSize:'12px'}} >{field.label}<span style={{color:'red'}}>*</span></label> : 
+                    <label style={{ textAlign: 'left', display: 'block',fontSize:'12px'}} >{field.label}  <span style={{color:'red',fontSize:'10px'}}>(Optional)</span></label>
                 }
                 
     <input type="text"
                              value={formData[field.name]}
                             placeholder={`Enter ${field.label}`}
-                          //  style={{width:'100%'}}
+                            style={{height:'40px',fontSize:'12px'}}
                               />
                               </div>
                 
@@ -51,21 +51,8 @@ const DynamicForm = ({fields,handlesubmit}) => {
              )
             })}
             </div>
-            <input onClick={() => handleSubmit()} type="submit" value="Submit" />
-    {/* <label style={{ textAlign: 'left', display: 'block', marginTop: '10px' }} for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name.." />
-
-    <label style={{ textAlign: 'left', display: 'block', marginTop: '10px' }} for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name.." />
-
-    <label style={{ textAlign: 'left', display: 'block', marginTop: '10px' }} for="country">Country</label>
-    <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
-    </select> */}
-
- 
+            <input style={{fontSize:'12px'}} onClick={() => handleSubmit()} type="submit" value="Submit" />
+  
 </div>
         </div>
         
