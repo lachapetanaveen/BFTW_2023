@@ -15,7 +15,6 @@ const ChristianResources = () => {
     const [fileUrls, setFileUrls] = useState([]);
   
     const handleFileChange = (event) => {
-  
       const selectedFiles = event.target.files;
       const fileList = Array.from(selectedFiles);
       const types = fileList.map((file) => file.type);
