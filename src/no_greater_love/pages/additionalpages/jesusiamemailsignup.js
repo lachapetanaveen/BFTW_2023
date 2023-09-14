@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import DynamicForm from '../../components/dynamicform';
 import Footer from '../../components/footer';
 import NGLVHeader from '../../components/header';
@@ -43,13 +43,13 @@ const EmailSignup = () => {
                     <p className='fsize' style={{textAlign:'center'}}>Jesus Christ is the most remarkable person who ever lived, and we can understand him better by considering seven things he said about himself—all in the Gospel of John.</p>
                   </div>
                   <div style={{textAlign:'center'}}>
-                    <p className='fsize' style={{fontStyle:'italic'}}>I am the bread of life,</p>
-                    <p className='fsize' style={{fontStyle:'italic'}}>I am the light of the world,</p>
-                    <p className='fsize' style={{fontStyle:'italic'}}>I am the gate for the sheep,</p>
-                    <p className='fsize' style={{fontStyle:'italic'}}>I am the good shepherd,</p>
-                    <p className='fsize' style={{fontStyle:'italic'}}>I am the resurrection and the life,</p>
-                    <p className='fsize' style={{fontStyle:'italic'}}>I am the way and the truth and the life,</p>
-                    <p className='fsize' style={{fontStyle:'italic'}}>I am the true vine.</p>
+                    <p className='fsize' style={{fontStyle:'italic',lineHeight:0.2}}>I am the bread of life,</p>
+                    <p className='fsize' style={{fontStyle:'italic',lineHeight:0.2}}>I am the light of the world,</p>
+                    <p className='fsize' style={{fontStyle:'italic',lineHeight:0.2}}>I am the gate for the sheep,</p>
+                    <p className='fsize' style={{fontStyle:'italic',lineHeight:0.2}}>I am the good shepherd,</p>
+                    <p className='fsize' style={{fontStyle:'italic',lineHeight:0.2}}>I am the resurrection and the life,</p>
+                    <p className='fsize' style={{fontStyle:'italic',lineHeight:0.2}}>I am the way and the truth and the life,</p>
+                    <p className='fsize' style={{fontStyle:'italic',lineHeight:0.2}}>I am the true vine.</p>
                   </div>
                   <div>
                     <p className='fsize'>These seven statements reveal who Jesus is and how we should think about him.</p>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Footer from '../../components/footer';
 import NGLVHeader from '../../components/header';
 
@@ -12,7 +12,7 @@ const IWanttoAcceptJesus = () => {
               
                 <section id="intro" class="content-section">
                 <div >
-              <img src={require('../../../assets/NGLV_images/Nairobi City Park.jpg')} style={{ width: '100%', height: '350px' }} />
+              <img src={require('../../../assets/NGLV_images/home_banner.png')} style={{ width: '100%', height: '350px' }} />
             </div>
                 <div className='container-fluid content'>
                 <div class="content-container">
@@ -36,8 +36,8 @@ Amen.
 </p>
 <p style={{fontWeight:'bold',fontSize:'12px',fontStyle:'italic'}}>Praise be to God! He is faithful and He loves you!</p>
             </div>
-            <div  className='col-md-6 d-flex justify-content-end'>
-                <img style={{width:'280px',height:'280px',marginRight:'40px'}} src={require('../../../assets/NGLV_images/No Greater Love Front.jpg')} />
+            <div   className='col-md-6 d-flex justify-content-end'>
+                <img style={{width:'450px',height:'320px',marginRight:'40px' }} src={require('../../../assets/NGLV_images/Kenya School Children.jpg')} />
             </div>
         </div>
             <div style={{marginTop:'20px'}}>
@@ -48,7 +48,9 @@ Amen.
 
 
 </p>
-<p className='fsize' style={{textAlign:'left',lineHeight:2}}>
+<div className='row'>
+        <div className='col-md-6'>
+        <p className='fsize' style={{textAlign:'left',lineHeight:2}}>
     <p className='fsize' style={{fontWeight:600}}>The journey of a Christian has many steps:</p>
     <li style={{lineHeight:2,marginLeft:'20px'}}>Hearing God’s Word</li>
     <li style={{lineHeight:2,marginLeft:'20px'}}>Believing God</li>
@@ -62,6 +64,12 @@ Amen.
     <li style={{marginLeft:'20px'}}>Gather with other Christians to pray and read the Bible.</li>
     <li style={{marginLeft:'20px'}}>Love God, and Love people!</li>
 </p>
+        </div>
+        <div   className='col-md-6 d-flex justify-content-end'>
+                <img style={{width:'450px',height:'320px',marginRight:'40px' }} src={require('../../../assets/NGLV_images/Kenya School Children 2.jpg')} />
+            </div>
+</div>
+
 </div>
 
        </div>

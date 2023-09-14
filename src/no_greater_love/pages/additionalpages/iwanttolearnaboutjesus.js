@@ -1,8 +1,8 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import NGLVHeader from '../../components/header';
 import Footer from '../../components/footer';
+import NGLVHeader from '../../components/header';
 
 
 
@@ -26,7 +26,7 @@ const IWantToLearnAboutJesus = () => {
                 </header> */}
                 <section id="intro" class="content-section learnjesus">
                 <div >
-              <img src={require('../../../assets/NGLV_images/Nairobi City Park.jpg')} style={{ width: '100%', height: '350px' }} />
+              <img src={require('../../../assets/NGLV_images/home_banner.png')} style={{ width: '100%', height: '350px' }} />
             </div>
                 <div className='container-fluid content'>
                     <p className='fsize'>We are so glad you want to learn more about Jesus. Here are three questions to ask about Jesus (This should replace your form. We are not asking them to answer the questions on the website but in their heart and mind.)</p>

@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Footer from '../../components/footer';
-import DynamicForm from '../../components/dynamicform';
 import NGLVHeader from '../../components/header';
 
 
@@ -41,7 +40,7 @@ const IHaveAcceptedJesus = () => {
            <NGLVHeader />
             <section id="intro" class="content-section">
             <div >
-              <img src={require('../../../assets/NGLV_images/Nairobi City Park.jpg')} style={{ width: '100%', height: '350px' }} />
+              <img src={require('../../../assets/NGLV_images/home_banner.png')} style={{ width: '100%', height: '350px' }} />
             </div>
             <div className='container-fluid content'>
             <p className='fsize'>Praise be to God! He is faithful and He loves you!</p>
@@ -65,7 +64,7 @@ const IHaveAcceptedJesus = () => {
                
                   </div>
                   <div className='col-md-6'>
-                    <img  style={{width:'360px',height:'360px'}}src={require('../../../assets/NGLV_images/Kenya Night.jpg')} />
+                    <img  style={{width:'360px',height:'360px'}}src={require('../../../assets/NGLV_images/Kenya Women.jpg')} />
                   {/* <DynamicForm fields={fields} onSubmit={handleSubmit} /> */}
                   </div>
                </div>

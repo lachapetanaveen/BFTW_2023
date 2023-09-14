@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import DynamicForm from '../../components/dynamicform';
 import Footer from '../../components/footer';
 import NGLVHeader from '../../components/header';
@@ -40,7 +40,7 @@ const DownloadForm = () => {
                 </header> */}
                 <section id="intro" class="content-section">
                 <div >
-              <img src={require('../../../assets/NGLV_images/Nairobi City Park.jpg')} style={{ width: '100%', height: '350px' }} />
+              <img src={require('../../../assets/NGLV_images/home_banner.png')} style={{ width: '100%', height: '350px' }} />
             </div>
             <p className='fsize'>Please fill out the form to receive your FREE digital download of The Gospel of John.</p>
             <p className='fsize'>After submitting the form, you will be sent to a new page where you can download a PDF.</p>

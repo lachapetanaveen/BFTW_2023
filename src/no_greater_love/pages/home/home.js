@@ -1,12 +1,11 @@
-import React, { Component, useState } from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import the carousel styles
-import { Carousel } from 'react-responsive-carousel';
-import Footer from '../../components/footer';
-import { Link, useNavigate } from 'react-router-dom';
-import Header from '../../components/header';
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
-import NGLVHeader from '../../components/header';
+import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import the carousel styles
+import { Link, useNavigate } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
+import Footer from '../../components/footer';
+import NGLVHeader from '../../components/header';
 const testimonialsData = [
   {
     id: 1,
@@ -108,7 +107,7 @@ const Home = () => {
 
           <section id="intro" class="content-section section-to-scroll">
             <div >
-              <img src={require('../../../assets/NGLV_images/Nairobi City Park.jpg')} style={{ width: '100%', height: '350px' }} />
+              <img src={require('../../../assets/NGLV_images/home_banner.png')} style={{ width: '100%', height: '350px' }} />
             </div>
             <div style={{ paddingTop: homelink ? '120px' : '0px' }} id="home" className='container-fluid content'>
 
@@ -119,12 +118,16 @@ const Home = () => {
                 </div>
 
               </div>
-              <div style={{ textAlign: 'left', marginTop: '20px' }}>
+             
+              <div className='row'>
+              
+                <div style={{textAlign:'left'}} className='col-md-6 d-flex align-content-center'>
+
+                  <div style={{ marginTop: '20px',marginLeft:'50px' }}>
+                  <div style={{ textAlign: 'left', marginTop: '20px' }}>
                 <h5>What do you believe about Jesus?</h5>
               </div>
-              <div className='row'>
-                <div style={{textAlign:'left'}} className='col-md-6'>
-                  <div style={{ marginTop: '20px', }}>
+                    <div >
                     <button style={{ marginBottom: '20px',fontSize:'14px' }}>
                       <input
                         type='checkbox'
@@ -135,6 +138,8 @@ const Home = () => {
                       />
                       <Link to={'/ihaveacceptedjesus'} >I have accepted Jesus as my Lord and Savior</Link>
                     </button>
+                    </div>
+                    <div>
                     <button style={{ marginBottom: '20px',fontSize:'14px' }}><input
                       type='checkbox'
                       value='I want to accept Jesus as my Lord and Savior'
@@ -142,17 +147,21 @@ const Home = () => {
                       style={{ marginRight: '12px' }}
                       checked={selectedOption === 'I want to accept Jesus as my Lord and Savior'}
                     /><Link to={'/iwanttoacceptjesus'}  >I want to accept Jesus as my Lord and Savior</Link></button>
-                    <button style={{ marginBottom: '20px',width:'358px',textAlign:'left',fontSize:'14px' }}><input
+                    </div>
+                   <div>
+                   <button style={{ marginBottom: '20px',width:'358px',textAlign:'left',fontSize:'14px' }}><input
                       type='checkbox'
                       value='I want to learn more about Jesus'
                       onChange={() => handlecheck('I want to learn more about Jesus')}
                       style={{ marginRight: '12px',textAlign:'left' }}
 
                     /><Link to={'/iwanttolearnaboutjesus'}>I want to learn more about Jesus</Link></button>
+                   </div>
+                   
                   </div>
                 </div>
                 <div className='col-md-6 d-flex justify-content-end'>
-                  <img style={{ maxHeight: '200px' }} src={require('../../../assets/NGLV_images/No Greater Love Logo Small Transparent.png')} />
+                  <img style={{ maxHeight: '300px', width:'600px' }} src={require('../../../assets/NGLV_images/Mt. Kenya.jpg')} />
                 </div>
               </div>
 
@@ -160,11 +169,11 @@ const Home = () => {
               <div id="gospel of john" style={{ paddingTop: '120px', paddingTop: '40px' }}>
                 <div className='row'>
                   <div className='col-md-6 d-flex align-items-center'>
-                    <p style={{ lineHeight: 2 }}>The Gospel of John is an account of the words and deeds of Jesus Christ recorded by His friend, John. It may be the most important thing ever written, and you owe it to yourself to read it.
+                    <p style={{ lineHeight: 2,fontWeight:600,fontSize:'25px' }}>The Gospel of John is an account of the words and deeds of Jesus Christ recorded by His friend, John. It may be the most important thing ever written, and you owe it to yourself to read it.
                     </p>
                   </div>
                   <div className='col-md-6 d-flex justify-content-end'>
-                    <img style={{ maxHeight: '300px', width: '40%' }} src={require('../../../assets/NGLV_images/No Greater Love Front.jpg')} />
+                    <img style={{ maxHeight: '500px', width: '45%' }} src={require('../../../assets/NGLV_images/No Greater Love Front.jpg')} />
                   </div>
                 </div>
               </div>
@@ -285,7 +294,7 @@ const Home = () => {
                     }>
                     {testimonialsData.map((testimonial) => (
                       <div key={testimonial.id}>
-                        <img style={{ height: '460px' }} src={testimonial.img} />
+                        <img style={{ height: '460px',width:'1420px' }} src={testimonial.img} />
 
                       </div>
                     ))}
