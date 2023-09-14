@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import NGLVHeader from '../../components/header';
+import Footer from '../../components/footer';
 
 
 
@@ -23,7 +24,10 @@ const IWantToLearnAboutJesus = () => {
                 {/* <header>
                     <h2>Affirmation of Desire</h2>
                 </header> */}
-                <section id="intro" class="content-section">
+                <section id="intro" class="content-section learnjesus">
+                <div >
+              <img src={require('../../../assets/NGLV_images/Nairobi City Park.jpg')} style={{ width: '100%', height: '350px' }} />
+            </div>
                 <div className='container-fluid content'>
                     <p className='fsize'>We are so glad you want to learn more about Jesus. Here are three questions to ask about Jesus (This should replace your form. We are not asking them to answer the questions on the website but in their heart and mind.)</p>
                 <div class="content-container">
@@ -33,30 +37,33 @@ const IWantToLearnAboutJesus = () => {
         
             <div>
                
-                    <label className='fsize' style={{ textAlign: 'left', display: 'block'}} >What did he say about himself? <span style={{color:'red'}}>*</span></label> 
+                    <label  style={{ textAlign: 'left', display: 'block',fontSize:'12px'}} >What did he say about himself? <span style={{color:'red'}}>*</span></label> 
                 
     <input type="text"
                              value={textbox1}
                             onChange={(e) => setTextbox1(e.target.value)}
+                            style={{fontSize:'12px'}}
                               />
                               </div>
                 
                               <div>
                
-               <label className='fsize' style={{ textAlign: 'left', display: 'block'}} >What did others say about him when he was alive? <span style={{color:'red'}}>*</span></label> 
+               <label  style={{ textAlign: 'left', display: 'block',fontSize:'12px'}} >What did others say about him when he was alive? <span style={{color:'red'}}>*</span></label> 
            
 <input type="text"
                         value={textbox2}
                         onChange={(e) => setTextbox2(e.target.value)}
+                        style={{fontSize:'12px'}}
                          />
                          </div>
                          <div>
                
-                    <label className='fsize' style={{ textAlign: 'left', display: 'block'}} >What do those who believe him say about him now? <span style={{color:'red'}}>*</span></label> 
+                    <label  style={{ textAlign: 'left', display: 'block',fontSize:'12px'}} >What do those who believe him say about him now? <span style={{color:'red'}}>*</span></label> 
                 
     <input type="text"
                              value={textbox3}
                              onChange={(e) => setTextbox3(e.target.value)}
+                             style={{fontSize:'12px'}}
                               />
                               </div>
             
@@ -78,6 +85,7 @@ const IWantToLearnAboutJesus = () => {
                 </div>
               
                 </section>
+                <Footer />
                 </div>
         </>
      );

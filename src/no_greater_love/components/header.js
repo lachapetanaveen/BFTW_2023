@@ -20,8 +20,10 @@ const links = [
   }
 ]
 const NGLVHeader = (props) => {
-  let location = useLocation()
+  let location = useLocation();
+  let navigate = useNavigate();
   const [homelink,setHomeLink] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const clickhome = (item) => {
     if(item.to === 'home'){
       props.clearpadd(true)
@@ -29,41 +31,43 @@ const NGLVHeader = (props) => {
     
   }
   const scrollToSection = () => {
-    let path = '';
-    if(location.pathname === '/home'){
-        path = 'home'
-    }else if(location.pathname === '/thegospeljohn'){
-      path = 'gospel of john'
-    }else if(location.pathname === '/freetools'){
-      path = 'free tools'
+    const currentLink = links.find((link) => link.link === location.pathname);
+    console.log(currentLink,'currentLink');
+    if (currentLink) {
+      scroll.scrollTo(currentLink.to, {
+        duration: 500,
+        smooth: true,
+        offset: -50,
+      });
+    } else {
+      scroll.scrollToTop({
+        duration: 500,
+        smooth: true,
+      });
     }
-    console.log(path,'pathpath');
-    scroll.scrollTo(path, {
-      duration: 500,
-      smooth: true,
-      offset: -50, // You can adjust the offset if needed
-    });
   };
   useEffect(() => {
    
       scrollToSection();
     
   }, [location.pathname]);
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+  const sendhome = () => {
+    navigate('/home')
+  }
     return ( 
         <>
               <div>
           <nav className='nglvheader'>
             <div className="nglvnavbar-container">
-              {/* <div className="logo">
-                <img className="logo_img" src={require('../../../assets/NGLV_images/No Greater Love Logo Small Transparent.png')} alt="logo" />
-              </div> */}
-              <div>
-                <img className='nglvlogo'  src={require('../../assets/NGLV_images/No Greater Love Logo Small Transparent.png')} alt="logo" />
+            
+              <div style={{cursor:'pointer'}}>
+                <img className='nglvlogo' onClick={() => sendhome()}  src={require('../../assets/NGLV_images/No Greater Love Logo Small Transparent.png')} alt="logo" />
               </div>
                 <ul className="nav-links">
-                  {/* <li><Link style={{ color: 'white' }} to={'/home'}>Home</Link></li>
-                  <li><Link style={{ color: 'white' }} to={'/about'}>The Gospel of John </Link></li>
-                  <li><Link style={{ color: 'white' }} to={'/contact'}>Free Tools </Link></li> */}
+               
                   {links.map((k,index) => {
                       return(
                         <li >
@@ -82,28 +86,11 @@ const NGLVHeader = (props) => {
                  </li>
                       )
                   })}
-                  
-            {/* <li>
-              <ScrollLink
-                style={{ color: 'white', cursor: 'pointer' }}
-                to="gospel of john"
-                smooth={true}
-                duration={500}
-              >
-                The Gospel of John
-              </ScrollLink>
-            </li>
-            <li>
-              <ScrollLink
-                style={{ color: 'white', cursor: 'pointer' }}
-                to="free tools"
-                smooth={true}
-                duration={500}
-              >
-                Free Tools
-              </ScrollLink>
-            </li> */}
+           
                 </ul>
+                <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+              <i style={{color:'black'}} className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'}`} />
+            </div>
             </div>
           </nav>
         </div>
